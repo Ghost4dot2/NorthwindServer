@@ -1,7 +1,14 @@
+#create the docker image
+docker build -t northwind-server .
+
+#Connect to the containers OS and run the bash terminal
 docker exec -it <container name> "bash"
 
 #once inside the sql container use the following command to allow running sql commands
 /opt/mssql-tools/bin/sqlcmd -S localhost -U SA -P AStupidPassword1@
 
+#to run any sql script including one that would initialize the server
+/opt/mssql-tools/bin/sqlcmd -S localhost -U SA -P AStupidPassword1@ -d master -i instnwnd.sql
+
 #To list all the databases once container is started
-SELECT Name from sys.Databases
+SELECT Name from sys.Databases11
