@@ -1,0 +1,1 @@
+docker run --name sql-nortwind -p 1433:1433 -d northwind-server
